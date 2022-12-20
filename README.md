@@ -75,3 +75,4 @@ nvm install v18.12.1
 npx prisma migrate dev
 npx prisma studio
 30 minutos
+npx tsc --noEmit

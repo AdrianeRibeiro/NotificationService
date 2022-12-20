@@ -11,9 +11,24 @@ export class InMemoryNotificationsRepository
   }
 
   async findById(notificationId: string): Promise<Notification | null> {
-    throw new Error('Method not implemented.');
+    const notification = this.notifications.find(
+      (item) => item.id === notificationId,
+    );
+
+    if (!notification) {
+      return null;
+    }
+
+    return notification;
   }
+
   async save(notification: Notification): Promise<void> {
-    throw new Error('Method not implemented.');
+    const notificationIndex = this.notifications.findIndex(
+      (item) => item.id == notification.id,
+    );
+
+    if (notificationIndex > 0) {
+      this.notifications[notificationIndex] = notification;
+    }
   }
 }

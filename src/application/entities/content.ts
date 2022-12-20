@@ -1,4 +1,7 @@
 export class Content {
+  static create(arg0: string): Content {
+    throw new Error('Method not implemented.');
+  }
   private readonly content: string;
 
   constructor(content: string) {
